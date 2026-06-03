@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday 🎂</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#dbb86d,#b6a075,#604526);
+    overflow:hidden;
+    position:relative;
+}
+
+.container{
+    text-align:center;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(12px);
+    padding:40px;
+    border-radius:30px;
+    color:white;
+    width:90%;
+    max-width:700px;
+    box-shadow:0 8px 32px rgba(0,0,0,.2);
+    animation:fadeIn 1.5s ease;
+}
+
+h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+h2{
+    font-size:1.5rem;
+    margin-bottom:20px;
+    color:#fff8dc;
+}
+
+.message{
+    font-size:1.1rem;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.btn{
+    padding:15px 30px;
+    border:none;
+    border-radius:50px;
+    background:white;
+    color:#4f270b;
+    font-size:1rem;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+}
+
+.cake{
+    font-size:80px;
+    animation:bounce 2s infinite;
+}
+
+.heart{
+    position:absolute;
+    color:white;
+    animation:float 6s linear infinite;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+    20%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+}
+
+.popup{
+    display:none;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background:white;
+    color:#050102;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 0 20px rgba(0,0,0,.2);
+    z-index:999;
+}
+
+.popup h3{
+    margin-bottom:15px;
+}
+.gallery{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:15px;
+}
+
+.gallery img{
+    width:100px;
+    height:100px;
+    object-fit:cover;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.2);
+}
+
+@media(max-width:768px){
+    h1{
+        font-size:2rem;
+    }
+
+    h2{
+        font-size:1.2rem;
+    }
+
+    .message{
+        font-size:1rem;
+    }
+}
+.popup{
+    display:none;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background:white;
+    color:#3a2a11;
+    padding:30px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    z-index:999;
+    width:90%;
+    max-width:500px;
+}
+
+.popup-img{
+    width: 80px;
+    height: 80px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid #b26d2c;
+    margin-bottom:15px;
+}
+
+#typing-text{
+    line-height:1.8;
+    color:#444;
+    min-height:180px;
+    text-align:left;
+    margin-top:15px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="cake">🎂</div>
+
+    <h1>Happy Birthday</h1>
+
+    <h2>Untuk Sahabat Terbaikku ❤️</h2>
+
+    <p class="message">
+        Selamat ulang tahun! 🎉<br><br>
+
+        Semoga di usia yang baru ini semua impianlu
+        dapat tercapai, diberikan kesehatan, rejeki yang berlimpah (biar bisa jajanin guaa heheheheh)
+        dan selalu bahagia.
+
+        Terima kasih sudah mau nemenin gua padahal engga ada hubungan wkwkwkwk, <br>
+        ngertiin gua dan sabar sama gua.
+        Semoga hari bertambahnya umur ini lu bisa lebih dewasa lebih berani dan enggak lebay, <br> 
+        dan semoga hiduplu penuh
+        tawa, dan kejutan indah. ✨
+    </p>
+
+    <button class="btn" onclick="showWish()">
+        Klik dong Hadiah  🎁
+    </button>
+</div>
+
+<div class="popup" id="popup">
+
+    <img src="image/tika.jpeg" alt="Foto Sahabat" class="popup-img">
+
+     <h3>💌 Dapet Surat nih yee </h3>
+     <div class="gallery">
+     <img src="image/foto1.jpeg">
+     <img src="image/foto2.jpeg">
+     <img src="image/foto3.jpeg">
+     <img src="image/foto4.jpeg"></div>
+
+    <p id="typing-text"></p>
+</div>
+
+<script>
+
+function showWish(){
+    const popup = document.getElementById("popup");
+    const typingText = document.getElementById("typing-text");
+
+    popup.style.display = "block";
+
+    const message =
+`hai orang aring ❤️
+
+Selamat ulang tahun yaa...
+
+Terima kasih karena selama ini sudah menjadi teman yang selalu ada di saat suka maupun duka.
+
+Semoga di umur yang baru ini kamu selalu diberikan kesehatan, kebahagiaan, dan semua impian yang sedang kamu perjuangkan bisa terwujud satu per satu.
+
+Jangan pernah meragukan dirimu sendiri, karena kamu adalah orang yang luar biasa.
+
+Selamat bertambah usia dan tetap menjadi pribadi yang hebat. semangatt 🎂✨`;
+
+    typingText.innerHTML = "";
+
+    let i = 0;
+
+    function typing(){
+        if(i < message.length){
+
+            typingText.innerHTML +=
+                message.charAt(i) === "\n"
+                ? "<br>"
+                : message.charAt(i);
+
+            i++;
+            setTimeout(typing, 20);
+        }
+    }
+
+    typing();
+}
+</script>
+
+</body>
+</html>
